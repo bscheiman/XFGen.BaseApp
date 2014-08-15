@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Json\BaseJsonObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\BaseObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\BasePage.cs" />
+    <!--$ITEMS$-->
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

@@ -25,28 +25,31 @@ namespace App.Json {
 			//client.DefaultRequestHeaders.Add("", "");
 
 			string jsonResponse;
-			HttpResponseMessage response;
+			HttpResponseMessage response = null;
 
 			switch (method.Method.ToUpper()) {
 				case "DELETE":
-					response = await client.DeleteAsync(url);
+					response = await client.DeleteAsync(uri);
 
 					break;
 
 				case "GET":
-					response = await client.GetAsync(url);
+					response = await client.GetAsync(uri);
 
 					break;
 
 				case "POST":
-					response = await client.PostAsync(url, new StringContent(post.ToJson() ?? ""));
+					response = await client.PostAsync(uri, new StringContent(post.ToJson() ?? ""));
 
 					break;
 
 				case "PUT":
-					response = await client.PutAsync(url, new StringContent(post.ToJson() ?? ""));
+					response = await client.PutAsync(uri, new StringContent(post.ToJson() ?? ""));
 
 					break;
+
+				default:
+					throw new ArgumentException("Unsupported method");
 			}
 
 			jsonResponse = await response.Content.ReadAsStringAsync();

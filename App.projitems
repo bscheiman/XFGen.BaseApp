@@ -15,10 +15,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\BasePage.cs" />
     <!--$ITEMS$-->
     <Compile Include="$(MSBuildThisFileDirectory)Json\JsonHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Objects\" />
     <Folder Include="$(MSBuildThisFileDirectory)Json\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
   </ItemGroup>
 </Project>

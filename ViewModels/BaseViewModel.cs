@@ -1,15 +1,19 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 
 namespace App.ViewModels {
 	public class BaseViewModel : INotifyPropertyChanged {
-		public event Xamarin.Forms.PropertyChangingEventHandler PropertyChanging;
 		public event PropertyChangedEventHandler PropertyChanged;
+		public event Xamarin.Forms.PropertyChangingEventHandler PropertyChanging;
 
-		protected void SetProperty<U>(ref U backingStore, U value, string propertyName, Action onChanged = null, Action<U> onChanging = null) {
-			if (EqualityComparer<U>.Default.Equals(backingStore, value))
+		private void SetProperty<T>(ref T backingStore, T value, Expression<Func<T>> action, Action onChanged = null, Action<T> onChanging = null) {
+			if (EqualityComparer<T>.Default.Equals(backingStore, value))
 				return;
+
+			var expression = (MemberExpression)action.Body;
+			string propertyName = expression.Member.Name;
 
 			if (onChanging != null)
 				onChanging(value);
@@ -24,12 +28,14 @@ namespace App.ViewModels {
 			OnPropertyChanged(propertyName);
 		}
 
+
 		public void OnPropertyChanging(string propertyName) {
 			if (PropertyChanging == null)
 				return;
 
 			PropertyChanging(this, new Xamarin.Forms.PropertyChangingEventArgs(propertyName));
 		}
+
 
 		public void OnPropertyChanged(string propertyName) {
 			if (PropertyChanged == null)

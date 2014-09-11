@@ -1,4 +1,6 @@
 ﻿using Xamarin.Forms;
+using System.Linq.Expressions;
+using System;
 
 namespace App.Pages {
 	public class BasePage : ContentPage {
@@ -11,6 +13,13 @@ namespace App.Pages {
 			view.SetBinding(property, path);
 
 			return view;
+		}
+
+		protected View BindElement<T>(View view, BindableProperty property, Expression<Func<T>> action) {
+			var expression = (MemberExpression)action.Body;
+			string propertyName = expression.Member.Name;
+
+			return BindElement(view, property, propertyName);
 		}
 	}
 

@@ -19,7 +19,12 @@ namespace App.Json {
 			JsConfig.IncludePublicFields = true;
 			JsConfig.IncludeNullValues = true;
 
-			var uri = url + (queryString ?? new {}).ToQueryString();
+			var uri = url;
+
+			if (queryString != null && queryString is string)
+				uri += "?" + queryString;
+			else 
+				uri += (queryString ?? new {}).ToQueryString();
 
 			// TODO: Add headers
 			//client.DefaultRequestHeaders.Add("", "");

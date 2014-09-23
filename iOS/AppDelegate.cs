@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using MonoTouch.Foundation;
+﻿using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-
 using Xamarin.Forms;
+using Xamarin;
 
 namespace App.iOS {
 	[Register("AppDelegate")]
@@ -14,6 +10,7 @@ namespace App.iOS {
 
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
 			Forms.Init();
+			FormsMaps.Init();
 
 			window = new UIWindow(UIScreen.MainScreen.Bounds);
 			

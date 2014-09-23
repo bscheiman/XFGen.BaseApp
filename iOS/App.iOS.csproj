@@ -95,23 +95,29 @@
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="Acr.XamForms.UserDialogs">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.1\lib\MonoTouch\Acr.XamForms.UserDialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="Acr.XamForms.UserDialogs.iOS">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.1\lib\MonoTouch\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.1\lib\MonoTouch\BTProgressHUD.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Text.MonoTouch">
       <HintPath>..\Components\servicestacktext-3.9.60.0\lib\ios\ServiceStack.Text.MonoTouch.dll</HintPath>
     </Reference>
     <Reference Include="ModernHttpClient">
       <HintPath>..\Components\modernhttpclient-2.0.1\lib\ios\ModernHttpClient.dll</HintPath>
     </Reference>
+    <Reference Include="Xamarin.Forms.Maps.iOS">
+      <HintPath>..\packages\Xamarin.Forms.Maps.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Maps.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
     <Reference Include="bscheiman.Common">
-      <HintPath>..\packages\bscheiman.Common.1.0.9\lib\MonoTouch\bscheiman.Common.dll</HintPath>
+      <HintPath>..\packages\bscheiman.Common.1.0.11\lib\MonoTouch\bscheiman.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.2\lib\MonoTouch\Acr.XamForms.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs.iOS">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.2\lib\MonoTouch\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.2\lib\MonoTouch\BTProgressHUD.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

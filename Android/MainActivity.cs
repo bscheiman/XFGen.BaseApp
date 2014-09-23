@@ -1,15 +1,7 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-
 using Xamarin.Forms.Platform.Android;
-
 
 namespace App.Android {
 	[Activity(Label = "App.Android.Android", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -18,6 +10,7 @@ namespace App.Android {
 			base.OnCreate(bundle);
 
 			Xamarin.Forms.Forms.Init(this, bundle);
+			Xamarin.FormsMaps.Init(this, bundle);
 
 			SetPage(App.GetMainPage());
 		}

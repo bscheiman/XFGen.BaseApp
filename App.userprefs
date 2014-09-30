@@ -1,13 +1,19 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.0" />
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Json/JsonHelper.cs">
+    <Files>
+      <File FileName="Json/JsonHelper.cs" Line="48" Column="48" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="App" expanded="True">
+            <Node name="Json" expanded="True">
+              <Node name="JsonHelper.cs" selected="True" />
+            </Node>
             <Node name="Pages" expanded="True" />
           </Node>
-          <Node name="App.Android" expanded="True" selected="True" />
+          <Node name="App.Android" expanded="True" />
           <Node name="App.iOS" expanded="True" />
         </State>
       </Pad>

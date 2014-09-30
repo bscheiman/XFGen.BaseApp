@@ -64,12 +64,12 @@ namespace App.Json {
 
 		public static Task<TReturn> Delete<TReturn>(string cmd, string queryString = null) {
 			using (var client = new HttpClient(new NativeMessageHandler()))
-				return Send<TReturn>(client, HttpMethod.Post, cmd, queryString);
+				return Send<TReturn>(client, HttpMethod.Delete, cmd, queryString);
 		}
 
 		public static Task<TReturn> Get<TReturn>(string cmd, string queryString = null) {
 			using (var client = new HttpClient(new NativeMessageHandler()))
-				return Send<TReturn>(client, HttpMethod.Post, cmd, queryString);
+				return Send<TReturn>(client, HttpMethod.Get, cmd, queryString);
 		}
 
 		public static Task<TReturn> Post<TReturn>(string cmd, string queryString = null, object post = null) {
@@ -79,7 +79,7 @@ namespace App.Json {
 
 		public static Task<TReturn> Put<TReturn>(string cmd, string queryString = null, object post = null) {
 			using (var client = new HttpClient(new NativeMessageHandler()))
-				return Send<TReturn>(client, HttpMethod.Post, cmd, queryString, post);
+				return Send<TReturn>(client, HttpMethod.Put, cmd, queryString, post);
 		}
 	}	
 }

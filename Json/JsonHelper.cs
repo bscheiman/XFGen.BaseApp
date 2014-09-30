@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using ServiceStack.Text;
 using bscheiman.Common.Extensions;
+using System.Text;
 
 namespace App.Json {
 	public static class JsonHelper {
@@ -44,12 +45,12 @@ namespace App.Json {
 					break;
 
 				case "POST":
-					response = await client.PostAsync(uri, new StringContent(post.ToJson() ?? ""));
+					response = await client.PostAsync(uri, new StringContent(post.ToJson() ?? "", Encoding.UTF8, "application/json"));
 
 					break;
 
 				case "PUT":
-					response = await client.PutAsync(uri, new StringContent(post.ToJson() ?? ""));
+					response = await client.PutAsync(uri, new StringContent(post.ToJson() ?? "", Encoding.UTF8, "application/json"));
 
 					break;
 

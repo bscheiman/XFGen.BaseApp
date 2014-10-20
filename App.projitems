@@ -16,13 +16,31 @@
     <!--$ITEMS$-->
     <Compile Include="$(MSBuildThisFileDirectory)Json\JsonHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\BaseModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\ImageListJsonObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ImageListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Custom\ImageList.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Custom\LoadingWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ImageListDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SettingsPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Instances.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\VisualElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Custom\SettingsTableView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SettingsModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\MultipleMapLocationObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MultipleMapLocationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MultipleMapLocationModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\LoginResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SingleLocationMapPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Objects\" />
     <Folder Include="$(MSBuildThisFileDirectory)Json\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Custom\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
   </ItemGroup>
 </Project>

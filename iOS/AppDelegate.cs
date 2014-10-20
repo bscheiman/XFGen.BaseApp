@@ -2,7 +2,9 @@
 using MonoTouch.UIKit;
 using Xamarin.Forms;
 using Xamarin;
+using Acr.XamForms.UserDialogs.iOS;
 
+[assembly: Dependency(typeof(UserDialogService))]
 namespace App.iOS {
 	[Register("AppDelegate")]
 	public partial class AppDelegate : UIApplicationDelegate {

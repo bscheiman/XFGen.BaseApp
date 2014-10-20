@@ -119,6 +119,13 @@
     <Reference Include="BTProgressHUD">
       <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.2\lib\MonoTouch\BTProgressHUD.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="RestSharp.MonoTouch">
+      <HintPath>..\Components\restsharp-104.4.0.1\lib\ios\RestSharp.MonoTouch.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanged">
+      <HintPath>..\packages\PropertyChanged.Fody.1.48.5\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -132,10 +139,13 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
+    <Compile Include="Renderers\ImageListRenderer.cs" />
+    <Compile Include="Renderers\SettingsTableViewRenderer.cs" />
   </ItemGroup>
   <Import Project="..\App.projitems" Label="Shared" Condition="Exists('..\App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Fody.1.25.0\build\Fody.targets" Condition="Exists('..\packages\Fody.1.25.0\build\Fody.targets')" />
   <ItemGroup>
     <XamarinComponentReference Include="servicestacktext">
       <Version>3.9.60.0</Version>
@@ -145,5 +155,18 @@
       <Version>2.0.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
+    <XamarinComponentReference Include="restsharp">
+      <Version>104.4.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
+    <Folder Include="Implementations\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="FodyWeavers.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

@@ -5,10 +5,10 @@ using App.Models;
 using App.Extensions;
 
 namespace App.Pages {
-	public class BasePage : BasePage<BaseModel> {
+	public class BasePage : BasePage<BaseViewModel> {
 	}
 
-	public class BasePage<TModel> : ContentPage where TModel : BaseModel, new() {
+	public class BasePage<TModel> : ContentPage where TModel : BaseViewModel, new() {
 		TModel _backingModel;
 
 		public TModel BackingModel {

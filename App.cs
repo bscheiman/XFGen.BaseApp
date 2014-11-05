@@ -4,7 +4,7 @@ using App.Pages;
 namespace App {
 	public class App {
 		public static Page GetMainPage() {	
-			return new FlyoutPage();
+			return new CustomNavPage(new DemoPage());
 		}
 	}
 }

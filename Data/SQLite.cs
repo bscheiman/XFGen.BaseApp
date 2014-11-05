@@ -34,6 +34,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 #endif
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Reflection;
 using System.Linq;
 using System.Linq.Expressions;
@@ -816,6 +817,24 @@ namespace SQLite {
 		}
 
 		/// <summary>
+		/// Attempts to retrieve the first object that matches the query from the table
+		/// associated with the specified type. 
+		/// </summary>
+		/// <param name="query">
+		/// The fully escaped SQL.
+		/// </param>
+		/// <param name="args">
+		/// Arguments to substitute for the occurences of '?' in the query.
+		/// </param>
+		/// <returns>
+		/// The object that matches the given predicate or null
+		/// if the object is not found.
+		/// </returns>
+		public T FindWithQuery<T>(string query, params object[] args) where T : new() {
+			return Query<T>(query, args).FirstOrDefault();
+		}
+
+		/// <summary>
 		/// Whether <see cref="BeginTransaction"/> has been called and the database is waiting for a <see cref="Commit"/>.
 		/// </summary>
 		public bool IsInTransaction {
@@ -1235,21 +1254,23 @@ namespace SQLite {
 			var insertCmd = map.GetInsertCommand(this, extra);
 			int count;
 
-			try {
-				count = insertCmd.ExecuteNonQuery(vals);
-			} catch (SQLiteException ex) {
-
-				if (SQLite3.ExtendedErrCode(this.Handle) == SQLite3.ExtendedResult.ConstraintNotNull) {
-					throw NotNullConstraintViolationException.New(ex.Result, ex.Message, map, obj);
+			lock (insertCmd) {
+				// We lock here to protect the prepared statement returned via GetInsertCommand.
+				// A SQLite prepared statement can be bound for only one operation at a time.
+				try {
+					count = insertCmd.ExecuteNonQuery(vals);
+				} catch (SQLiteException ex) {
+					if (SQLite3.ExtendedErrCode(this.Handle) == SQLite3.ExtendedResult.ConstraintNotNull) {
+						throw NotNullConstraintViolationException.New(ex.Result, ex.Message, map, obj);
+					}
+					throw;
 				}
-				throw;
-			}
 
-			if (map.HasAutoIncPK) {
-				var id = SQLite3.LastInsertRowid(Handle);
-				map.SetAutoIncPK(obj, id);
+				if (map.HasAutoIncPK) {
+					var id = SQLite3.LastInsertRowid(Handle);
+					map.SetAutoIncPK(obj, id);
+				}
 			}
-
 			if (count > 0)
 				OnTableChanged(map, NotifyTableChangedAction.Insert);
 
@@ -1640,6 +1661,7 @@ namespace SQLite {
 				// People should not be calling Get/Find without a PK
 				GetByPrimaryKeySql = string.Format("select * from \"{0}\" limit 1", TableName);
 			}
+			_insertCommandMap = new ConcurrentDictionary<string, PreparedSqlLiteInsertCommand>();
 		}
 
 		public bool HasAutoIncPK { get; private set; }
@@ -1678,19 +1700,19 @@ namespace SQLite {
 			return exact;
 		}
 
-		PreparedSqlLiteInsertCommand _insertCommand;
-		string _insertCommandExtra;
+		ConcurrentDictionary<string, PreparedSqlLiteInsertCommand> _insertCommandMap;
 
 		public PreparedSqlLiteInsertCommand GetInsertCommand(SQLiteConnection conn, string extra) {
-			if (_insertCommand == null) {
-				_insertCommand = CreateInsertCommand(conn, extra);
-				_insertCommandExtra = extra;
-			} else if (_insertCommandExtra != extra) {
-				_insertCommand.Dispose();
-				_insertCommand = CreateInsertCommand(conn, extra);
-				_insertCommandExtra = extra;
+			PreparedSqlLiteInsertCommand prepCmd;
+			if (!_insertCommandMap.TryGetValue(extra, out prepCmd)) {
+				prepCmd = CreateInsertCommand(conn, extra);
+				if (!_insertCommandMap.TryAdd(extra, prepCmd)) {
+					// Concurrent add attempt beat us.
+					prepCmd.Dispose();
+					_insertCommandMap.TryGetValue(extra, out prepCmd);
+				}
 			}
-			return _insertCommand;
+			return prepCmd;
 		}
 
 		PreparedSqlLiteInsertCommand CreateInsertCommand(SQLiteConnection conn, string extra) {
@@ -1719,10 +1741,10 @@ namespace SQLite {
 		}
 
 		protected internal void Dispose() {
-			if (_insertCommand != null) {
-				_insertCommand.Dispose();
-				_insertCommand = null;
+			foreach (var pair in _insertCommandMap) {
+				pair.Value.Dispose();
 			}
+			_insertCommandMap = null;
 		}
 
 		public class Column {
@@ -2787,6 +2809,9 @@ namespace SQLite {
 		}
 
 #if !USE_CSHARP_SQLITE && !USE_WP8_NATIVE_SQLITE && !USE_SQLITEPCL_RAW
+		[DllImport("sqlite3", EntryPoint = "sqlite3_threadsafe", CallingConvention = CallingConvention.Cdecl)]
+		public static extern int Threadsafe();
+
 		[DllImport("sqlite3", EntryPoint = "sqlite3_open", CallingConvention = CallingConvention.Cdecl)]
 		public static extern Result Open([MarshalAs(UnmanagedType.LPStr)] string filename, out IntPtr db);
 

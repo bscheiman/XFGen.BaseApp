@@ -2,8 +2,8 @@
 
 namespace App.Extensions {
 	public static partial class Extensions {
-		public static TView BindTo<TView>(this TView visualElement, BindableProperty targetProperty, string modelProperty) where TView : Element {
-			visualElement.SetBinding(targetProperty, new Binding(modelProperty));
+		public static TView BindTo<TView>(this TView visualElement, BindableProperty targetProperty, string modelProperty, string fmt = "") where TView : Element {
+			visualElement.SetBinding(targetProperty, string.IsNullOrEmpty(fmt) ? new Binding(modelProperty) : new Binding(modelProperty, stringFormat: fmt));
 
 			return visualElement;
 		}

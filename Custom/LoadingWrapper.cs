@@ -1,16 +1,23 @@
 ﻿using System;
 using Xamarin.Forms;
+using App.ViewModels;
 
 namespace App.Custom {
 	public class LoadingWrapper : IDisposable {
-		public LoadingWrapper(string message = "Loading...") {
-			Device.BeginInvokeOnMainThread(() => {
-				// TODO: Add progress
+		public BaseViewModel Model { get; set; }
+
+		public LoadingWrapper(BaseViewModel viewModel, string message = "Loading...") {
+			Device.BeginInvokeOnMainThread(() => { 
+				(Model = viewModel).IsBusy = true;
+				Instances.Dialogs.ShowLoading(message);
 			});
 		}
 
 		public void Dispose() {
-			// TODO: Remove progress
+			Device.BeginInvokeOnMainThread(() => { 
+				Model.IsBusy = false;
+				Instances.Dialogs.HideLoading();
+			});
 		}
 	}
 }

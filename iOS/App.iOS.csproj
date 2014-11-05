@@ -9,6 +9,7 @@
     <RootNamespace>App.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>AppiOS</AssemblyName>
+    <UseMSBuildEngine>True</UseMSBuildEngine>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,47 +85,50 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
-    <Reference Include="Xamarin.Forms.Platform.iOS">
-      <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Platform.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Core">
-      <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Xaml">
-      <HintPath>..\packages\Xamarin.Forms.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="ServiceStack.Text.MonoTouch">
-      <HintPath>..\Components\servicestacktext-3.9.60.0\lib\ios\ServiceStack.Text.MonoTouch.dll</HintPath>
-    </Reference>
     <Reference Include="ModernHttpClient">
       <HintPath>..\Components\modernhttpclient-2.0.1\lib\ios\ModernHttpClient.dll</HintPath>
     </Reference>
-    <Reference Include="Xamarin.Forms.Maps.iOS">
-      <HintPath>..\packages\Xamarin.Forms.Maps.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Maps.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="Xamarin.Forms.Maps">
-      <HintPath>..\packages\Xamarin.Forms.Maps.1.2.2.6243\lib\MonoTouch10\Xamarin.Forms.Maps.dll</HintPath>
-    </Reference>
-    <Reference Include="bscheiman.Common">
-      <HintPath>..\packages\bscheiman.Common.1.0.11\lib\MonoTouch\bscheiman.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Acr.XamForms.UserDialogs">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.2\lib\MonoTouch\Acr.XamForms.UserDialogs.dll</HintPath>
-    </Reference>
-    <Reference Include="Acr.XamForms.UserDialogs.iOS">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.2\lib\MonoTouch\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
-    </Reference>
-    <Reference Include="BTProgressHUD">
-      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.0.2\lib\MonoTouch\BTProgressHUD.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows" />
-    <Reference Include="RestSharp.MonoTouch">
-      <HintPath>..\Components\restsharp-104.4.0.1\lib\ios\RestSharp.MonoTouch.dll</HintPath>
-    </Reference>
     <Reference Include="PropertyChanged">
       <HintPath>..\packages\PropertyChanged.Fody.1.48.5\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanged.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.1.2.3.6257\lib\MonoTouch10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.1.2.3.6257\lib\MonoTouch10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.1.2.3.6257\lib\MonoTouch10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps.iOS">
+      <HintPath>..\packages\Xamarin.Forms.Maps.1.2.3.6257\lib\MonoTouch10\Xamarin.Forms.Maps.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Maps">
+      <HintPath>..\packages\Xamarin.Forms.Maps.1.2.3.6257\lib\MonoTouch10\Xamarin.Forms.Maps.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.1.2\lib\MonoTouch\Acr.XamForms.UserDialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Acr.XamForms.UserDialogs.iOS">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.1.2\lib\MonoTouch\Acr.XamForms.UserDialogs.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\Acr.XamForms.UserDialogs.2.1.2\lib\MonoTouch\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="bscheiman.Common">
+      <HintPath>..\packages\bscheiman.Common.1.0.15\lib\MonoTouch\bscheiman.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="PropertyChanging">
+      <HintPath>..\packages\PropertyChanging.Fody.1.26.0.0\Lib\portable-net4+sl4+wp8+win8+wpa81+MonoAndroid16+MonoTouch40\PropertyChanging.dll</HintPath>
+    </Reference>
+    <Reference Include="ToString">
+      <HintPath>..\packages\ToString.Fody.1.7.0.0\Lib\portable-net4+sl4+wp7+win8+MonoAndroid16+MonoTouch40\ToString.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -138,25 +142,19 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
     <Compile Include="Renderers\ImageListRenderer.cs" />
     <Compile Include="Renderers\SettingsTableViewRenderer.cs" />
+    <Compile Include="Implementations\PathHelper.cs" />
+    <Compile Include="Renderers\ImageListCellRenderer.cs" />
+    <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
   </ItemGroup>
   <Import Project="..\App.projitems" Label="Shared" Condition="Exists('..\App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
-  <Import Project="..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.2.2.6243\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
-  <Import Project="..\packages\Fody.1.25.0\build\Fody.targets" Condition="Exists('..\packages\Fody.1.25.0\build\Fody.targets')" />
+  <Import Project="..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.2.3.6257\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10\Xamarin.Forms.targets')" />
+  <Import Project="..\packages\Fody.1.26.1\build\Fody.targets" Condition="Exists('..\packages\Fody.1.26.1\build\Fody.targets')" />
   <ItemGroup>
-    <XamarinComponentReference Include="servicestacktext">
-      <Version>3.9.60.0</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
     <XamarinComponentReference Include="modernhttpclient">
       <Version>2.0.1</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
-    <XamarinComponentReference Include="restsharp">
-      <Version>104.4.0.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

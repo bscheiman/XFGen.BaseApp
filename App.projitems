@@ -15,7 +15,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\BasePage.cs" />
     <!--$ITEMS$-->
     <Compile Include="$(MSBuildThisFileDirectory)Json\JsonHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Json\ImageListJsonObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ImageListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Custom\ImageList.cs" />
@@ -25,22 +24,44 @@
     <Compile Include="$(MSBuildThisFileDirectory)Instances.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Extensions\VisualElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Custom\SettingsTableView.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\SettingsModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Json\MultipleMapLocationObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\MultipleMapLocationPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\MultipleMapLocationModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\LoginPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Json\LoginResponse.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SingleLocationMapPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\LoginModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\Database.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IPathHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\SQLite.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\BaseDbObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\ConfigDbObject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SettingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\LoginViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MultipleMapLocationViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SingleLocationMapViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\MultipleMapLocationResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\DataTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\SQLiteAsync.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ImageListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Custom\ObservableCollectionEx.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ImageListDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ColorConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\GalleryPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GalleryViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Json\GalleryResponse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\WebPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\WebViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AsyncErrorHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\GalleryDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GalleryDetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)Objects\" />
     <Folder Include="$(MSBuildThisFileDirectory)Json\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
     <Folder Include="$(MSBuildThisFileDirectory)Custom\" />
     <Folder Include="$(MSBuildThisFileDirectory)Interfaces\" />
     <Folder Include="$(MSBuildThisFileDirectory)Extensions\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
   </ItemGroup>
 </Project>

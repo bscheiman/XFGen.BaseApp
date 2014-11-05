@@ -155,13 +155,9 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="Renderers\ImageListRenderer.cs" />
-    <Compile Include="Renderers\SettingsTableViewRenderer.cs" />
     <Compile Include="Implementations\PathHelper.cs" />
-    <Compile Include="Renderers\ImageListCellRenderer.cs" />
     <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
     <Compile Include="Renderers\CustomNavPageRenderer.cs" />
-    <Compile Include="Implementations\BarcodeReader.cs" />
     <Compile Include="Renderers\NativeCssRenderer.cs" />
   </ItemGroup>
   <Import Project="..\App.projitems" Label="Shared" Condition="Exists('..\App.projitems')" />

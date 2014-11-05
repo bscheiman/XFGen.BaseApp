@@ -114,11 +114,8 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderers\SettingsTableViewRenderer.cs" />
     <Compile Include="Implementations\PathHelper.cs" />
-    <Compile Include="Renderers\ImageListCellRenderer.cs" />
     <Compile Include="Renderers\CustomNavPageRenderer.cs" />
-    <Compile Include="Implementations\BarcodeReader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -32,7 +32,7 @@ namespace App.Pages {
 		}
 
 		protected Label GetLabel(string txt) {
-			return new Label { Text = txt, TextColor = Color.FromHex("#ecf101") };
+			return new Label { Text = txt, TextColor = Color.FromHex("#ecf0f1") };
 		}
 	}
 }

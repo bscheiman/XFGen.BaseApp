@@ -1,0 +1,19 @@
+﻿/* STYLE GUIDE: http://nativecss.com/docs/styling */
+
+view.basePage {
+	background-color: #34495e;
+}
+
+navbar, #flyoutMenu {
+	background-color: #2c3e50;
+}
+
+navbar button:nth-of-type(2), navbar #menu_settings {
+	background-color: #2c3e50;
+}
+ 
+navbar, actionbar label {
+	color: #ecf0f1;
+}
+
+/*viewcontroller#view, viewcontroller#view > view, viewcontroller#view > view > view { -ios-style-guide-visible: true; } */

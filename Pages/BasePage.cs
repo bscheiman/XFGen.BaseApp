@@ -3,9 +3,10 @@ using System.Linq.Expressions;
 using System;
 using App.ViewModels;
 using System.Threading.Tasks;
+using App.Interfaces;
 
 namespace App.Pages {
-	public abstract class BasePage<TModel> : ContentPage where TModel : BaseViewModel, new() {
+	public abstract class BasePage<TModel> : ContentPage, IBasePage where TModel : BaseViewModel, new() {
 		TModel _backingModel;
 
 		public TModel BackingModel {

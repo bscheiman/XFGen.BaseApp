@@ -3,6 +3,8 @@ using MonoTouch.UIKit;
 using Xamarin.Forms;
 using Xamarin;
 using Acr.XamForms.UserDialogs.iOS;
+using Style;
+using System.IO;
 
 [assembly: Dependency(typeof(UserDialogService))]
 namespace App.iOS {
@@ -18,7 +20,9 @@ namespace App.iOS {
 			
 			window.RootViewController = App.GetMainPage().CreateViewController();
 			window.MakeKeyAndVisible();
-			
+
+			NativeCSS.StyleWithCSS(File.ReadAllText("default.css"));
+
 			return true;
 		}
 	}

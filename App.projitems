@@ -44,7 +44,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ImageListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Custom\ObservableCollectionEx.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ImageListDetailViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ColorConfig.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\GalleryPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GalleryViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Json\GalleryResponse.cs" />
@@ -53,6 +52,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)AsyncErrorHandler.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\GalleryDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\GalleryDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\CustomNavPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IBarcodeReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\FlyoutPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FlyoutViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Objects\FlyoutPageInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IBasePage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

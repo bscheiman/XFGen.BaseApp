@@ -1,19 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ViewModels/BaseViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Pages/FlyoutPage.cs">
     <Files>
-      <File FileName="ViewModels/ImageListViewModel.cs" Line="43" Column="43" />
-      <File FileName="ViewModels/ImageListDetailViewModel.cs" Line="1" Column="1" />
-      <File FileName="ViewModels/BaseViewModel.cs" Line="2" Column="2" />
+      <File FileName="Pages/FlyoutPage.cs" Line="68" Column="68" />
+      <File FileName="App.cs" Line="17" Column="17" />
       <File FileName="Pages/BasePage.cs" Line="76" Column="76" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="App.iOS" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

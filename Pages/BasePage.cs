@@ -18,8 +18,6 @@ namespace App.Pages {
 		}
 
 		public BasePage() {
-			// iOS 7 Status bar
-			Padding = new Thickness(0, Device.OnPlatform(Navigation == null ? 20 : 0, 0, 0), 0, 0);
 
 			BindingContext = BackingModel;
 
@@ -30,6 +28,13 @@ namespace App.Pages {
 			PostInit();
 		}
 
+		protected override void OnAppearing() {
+			base.OnAppearing();
+
+			// iOS 7 Status bar
+			Padding = new Thickness(0, Device.OnPlatform(HasNavigationBar() ? 0 : 20, 0, 0), 0, 0);
+		}
+
 		async Task PostInit() {
 			ConfigureUI();
 			HookEvents();
@@ -37,6 +42,12 @@ namespace App.Pages {
 			await BackingModel.Update();
 
 			PostUpdate();
+		}
+
+		private bool HasNavigationBar() {
+			var navBar = Parent as NavigationPage;
+
+			return navBar != null;
 		}
 
 		protected void Bind<TV>(BindableProperty property, Expression<Func<TModel, TV>> func) {

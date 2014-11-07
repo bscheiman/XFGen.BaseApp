@@ -13,7 +13,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Json\BaseJsonObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Objects\BaseObject.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\BasePage.cs" />
-    <!--$ITEMS$-->
     <Compile Include="$(MSBuildThisFileDirectory)Json\JsonHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Custom\LoadingWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Instances.cs" />
@@ -30,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\CustomNavPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IBasePage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\DemoPage.cs" />
+    <!--$ITEMS$-->
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

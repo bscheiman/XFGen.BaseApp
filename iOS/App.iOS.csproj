@@ -159,6 +159,7 @@
     <Compile Include="Bootstrap\UserDialogsBootstrap.cs" />
     <Compile Include="Renderers\CustomNavPageRenderer.cs" />
     <Compile Include="Renderers\NativeCssRenderer.cs" />
+    <!--$ITEMS$-->
   </ItemGroup>
   <Import Project="..\App.projitems" Label="Shared" Condition="Exists('..\App.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />

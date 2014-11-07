@@ -116,6 +116,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Implementations\PathHelper.cs" />
     <Compile Include="Renderers\CustomNavPageRenderer.cs" />
+    <!--$ITEMS$-->
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

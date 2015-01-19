@@ -1,29 +1,19 @@
-﻿using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+﻿using Foundation;
+using UIKit;
 using Xamarin.Forms;
-using Xamarin;
+using Xamarin.Forms.Platform.iOS;
 using Acr.XamForms.UserDialogs.iOS;
-using Style;
-using System.IO;
 
 [assembly: Dependency(typeof(UserDialogService))]
 namespace App.iOS {
 	[Register("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate {
-		UIWindow window;
-
+	public partial class AppDelegate : FormsApplicationDelegate {
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options) {
 			Forms.Init();
-			FormsMaps.Init();
 
-			window = new UIWindow(UIScreen.MainScreen.Bounds);
-			
-			window.RootViewController = App.GetMainPage().CreateViewController();
-			window.MakeKeyAndVisible();
+			LoadApplication(new App());
 
-			NativeCSS.StyleWithCSS(File.ReadAllText("default.css"));
-
-			return true;
+			return base.FinishedLaunching(app, options);
 		}
 	}
 }

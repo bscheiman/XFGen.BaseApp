@@ -1,13 +1,13 @@
 ﻿using System;
-using App.Interfaces;
 using System.IO;
 using Xamarin.Forms;
-using App.iOS.Implementations;
-using MonoTouch.UIKit;
-using MonoTouch.Foundation;
+using AppCreator.iOS.Implementations;
+using UIKit;
+using Foundation;
+using AppCreator.Interfaces;
 
 [assembly: Dependency(typeof(PathHelper))]
-namespace App.iOS.Implementations {
+namespace AppCreator.iOS.Implementations {
 	public class PathHelper : IPathHelper {
 		public string GetFullPath(string filename) {
 			string documentsPath = UIDevice.CurrentDevice.CheckSystemVersion(8, 0) 

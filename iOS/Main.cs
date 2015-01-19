@@ -1,6 +1,11 @@
-﻿using MonoTouch.UIKit;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
-namespace App.iOS {
+using Foundation;
+using UIKit;
+
+namespace AppCreator.iOS {
 	public class Application {
 		// This is the main entry point of the application.
 		static void Main(string[] args) {

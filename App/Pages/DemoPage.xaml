@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<acp:BasePage
+	BackgroundColor="Blue"
+	x:TypeArguments="acvm:BaseViewModel"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:acp="clr-namespace:AppCreator.Pages;assembly=AppCreator"
+	xmlns:acc="clr-namespace:AppCreator.Controls;assembly=AppCreator"
+	xmlns:acvm="clr-namespace:AppCreator.ViewModels;assembly=AppCreator"
+	x:Class="App.Pages.DemoPage">
+	<ScrollView>
+		<StackLayout
+			Orientation="Vertical"
+			Padding="0"
+			Spacing="5">
+			<Label
+				TextColor="#ecf0f1"
+				Text="Hi there!" />
+			<acc:Spacer
+				Space="20" />
+			<Label
+				TextColor="#ecf0f1"
+				Text="This is a demo page that showcases AppCreator's ability to quickly prototype a working MVVM Page." />
+			<Label
+				TextColor="#ecf0f1"
+				Text="Feel free to browse the source or request more components." />
+			<Label
+				TextColor="#ecf0f1"
+				Text="You should change App.MainPage to change your app's entry point." />
+			<acc:Spacer
+				Space="30" />
+			<Label
+				TextColor="#ecf0f1"
+				Text="Most components have built-in Renderers. Or you can just use NativeCSS." />
+		</StackLayout>
+	</ScrollView>
+</acp:BasePage>
